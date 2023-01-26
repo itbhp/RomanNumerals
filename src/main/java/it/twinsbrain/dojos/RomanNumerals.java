@@ -1,15 +1,18 @@
 package it.twinsbrain.dojos;
 
+import java.util.Map;
+
 public class RomanNumerals {
+
+    private static final Map<Integer, String> romanDictionary = Map.of(
+            1, "I",
+            4, "IV",
+            5, "V"
+    );
+
     public static String romanOf(int number) {
-        if (number == 4) {
-            return "IV";
-        }
-        if (number == 5) {
-            return "V";
-        }
-        if (number == 1) {
-            return "I";
+        if (romanDictionary.containsKey(number)) {
+            return romanDictionary.get(number);
         }
         return romanOf(number - 1) + "I";
     }
