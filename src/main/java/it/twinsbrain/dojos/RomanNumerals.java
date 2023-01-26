@@ -8,6 +8,6 @@ public class RomanNumerals {
         if (number == 1) {
             return "I";
         }
-        return "I" + romanOf(number - 1);
+        return romanOf(number - 1) + "I";
     }
 }

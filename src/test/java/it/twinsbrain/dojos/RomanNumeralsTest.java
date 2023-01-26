@@ -34,4 +34,14 @@ public class RomanNumeralsTest {
     void five_is_V() {
         assertThat(romanOf(5), equalTo("V"));
     }
+
+    @ParameterizedTest
+    @CsvSource({
+            "6, VI",
+            "7, VII",
+            "8, VIII"
+    })
+    void from_6_to_8_works(int arabic, String roman) {
+        assertThat(romanOf(arabic), equalTo(roman));
+    }
 }
