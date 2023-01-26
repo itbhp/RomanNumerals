@@ -29,4 +29,9 @@ public class RomanNumeralsTest {
     void from_1_to_3_works(int arabic, String roman) {
         assertThat(romanOf(arabic), equalTo(roman));
     }
+
+    @Test
+    void five_is_V() {
+        assertThat(romanOf(5), equalTo("V"));
+    }
 }
