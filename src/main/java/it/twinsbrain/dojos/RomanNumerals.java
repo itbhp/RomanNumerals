@@ -2,6 +2,9 @@ package it.twinsbrain.dojos;
 
 public class RomanNumerals {
     public static String romanOf(int number) {
+        if (number == 4) {
+            return "IV";
+        }
         if (number == 5) {
             return "V";
         }

@@ -10,16 +10,6 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class RomanNumeralsTest {
 
-    /*
-      # Test List
-
-      I -> 1
-      II -> 2
-      III -> 3
-      IV -> 4
-
-     */
-
     @ParameterizedTest
     @CsvSource({
             "1, I",
@@ -43,5 +33,10 @@ public class RomanNumeralsTest {
     })
     void from_6_to_8_works(int arabic, String roman) {
         assertThat(romanOf(arabic), equalTo(roman));
+    }
+
+    @Test
+    void four_is_IV() {
+        assertThat(romanOf(4), equalTo("IV"));
     }
 }
