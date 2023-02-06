@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class RomanNumeralsTest {
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "roman number for {0} is {1}")
     @CsvSource({
             "1, I",
             "2, II",
@@ -25,7 +25,7 @@ public class RomanNumeralsTest {
         assertThat(romanOf(5), equalTo("V"));
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "roman number for {0} is {1}")
     @CsvSource({
             "6, VI",
             "7, VII",
