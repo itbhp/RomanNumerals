@@ -22,7 +22,7 @@ public class RomanNumeralsTest {
 
     @Test
     void four_is_IV() {
-        assertThat(romanOf(5), equalTo("V"));
+        assertThat(romanOf(4), equalTo("IV"));
     }
     @Test
     void five_is_V() {
