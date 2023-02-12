@@ -21,6 +21,10 @@ public class RomanNumeralsTest {
     }
 
     @Test
+    void four_is_IV() {
+        assertThat(romanOf(5), equalTo("V"));
+    }
+    @Test
     void five_is_V() {
         assertThat(romanOf(5), equalTo("V"));
     }
@@ -36,7 +40,32 @@ public class RomanNumeralsTest {
     }
 
     @Test
-    void four_is_IV() {
-        assertThat(romanOf(4), equalTo("IV"));
+    void nine_is_IX() {
+        assertThat(romanOf(9), equalTo("IX"));
+    }
+
+    @Test
+    void ten_is_X() {
+        assertThat(romanOf(10), equalTo("X"));
+    }
+
+    @ParameterizedTest(name = "roman number for {0} is {1}")
+    @CsvSource({
+            "11, XI",
+            "12, XII",
+            "13, XIII"
+    })
+    void from_11_to_13_works(int arabic, String roman) {
+        assertThat(romanOf(arabic), equalTo(roman));
+    }
+
+    @Test
+    void fourteen_is_XIV() {
+        assertThat(romanOf(14), equalTo("XIV"));
+    }
+
+    @Test
+    void fifty_is_L() {
+        assertThat(romanOf(50), equalTo("L"));
     }
 }
