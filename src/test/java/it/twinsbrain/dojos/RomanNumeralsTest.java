@@ -16,7 +16,7 @@ public class RomanNumeralsTest {
             "2, II",
             "3, III"
     })
-    void from_1_to_3_works(int arabic, String roman) {
+    void from_1_to_3_work(int arabic, String roman) {
         assertThat(romanOf(arabic), equalTo(roman));
     }
 
@@ -35,7 +35,7 @@ public class RomanNumeralsTest {
             "7, VII",
             "8, VIII"
     })
-    void from_6_to_8_works(int arabic, String roman) {
+    void from_6_to_8_work(int arabic, String roman) {
         assertThat(romanOf(arabic), equalTo(roman));
     }
 
@@ -55,7 +55,7 @@ public class RomanNumeralsTest {
             "12, XII",
             "13, XIII"
     })
-    void from_11_to_13_works(int arabic, String roman) {
+    void from_11_to_13_work(int arabic, String roman) {
         assertThat(romanOf(arabic), equalTo(roman));
     }
 
@@ -82,7 +82,7 @@ public class RomanNumeralsTest {
             "48, XLVIII",
             "49, XLIX",
     })
-    void from_45_to_49_works(int arabic, String roman) {
+    void from_45_to_49_work(int arabic, String roman) {
         assertThat(romanOf(arabic), equalTo(roman));
     }
 
@@ -95,4 +95,16 @@ public class RomanNumeralsTest {
     void ninety_is_XC() {
         assertThat(romanOf(90), equalTo("XC"));
     }
+
+    @ParameterizedTest(name = "roman number for {0} is {1}")
+    @CsvSource({
+            "400, CD",
+            "500, D",
+            "900, CM",
+            "1000, M"
+    })
+    void last_special_symbols_work(int arabic, String roman) {
+        assertThat(romanOf(arabic), equalTo(roman));
+    }
+
 }

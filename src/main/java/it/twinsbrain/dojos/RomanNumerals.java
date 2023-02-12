@@ -7,6 +7,10 @@ import java.util.TreeMap;
 public class RomanNumerals {
 
     private static final Map<Integer, String> romanDictionary = new TreeMap<>(Comparator.reverseOrder()) {{
+        put(1000, "M");
+        put(900, "CM");
+        put(500, "D");
+        put(400, "CD");
         put(100, "C");
         put(90, "XC");
         put(50, "L");
