@@ -23,14 +23,14 @@ public class RomanNumerals {
     }};
 
     public static String romanOf(int number) {
-        if (romanDictionary.containsKey(number)) {
-            return romanDictionary.get(number);
-        }
+        var result = new StringBuilder();
+        var remaining = number;
         for (var key : romanDictionary.keySet()) {
-            if (number > key) {
-                return romanOf(key) + romanOf(number - key);
+            while (remaining >= key) {
+                result.append(romanDictionary.get(key));
+                remaining -= key;
             }
         }
-        return "";
+        return result.toString();
     }
 }
