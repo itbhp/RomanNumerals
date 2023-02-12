@@ -8,6 +8,7 @@ public class RomanNumerals {
 
     private static final Map<Integer, String> romanDictionary = new TreeMap<>(Comparator.reverseOrder()) {{
         put(50, "L");
+        put(40, "XL");
         put(10, "X");
         put(9, "IX");
         put(5, "V");

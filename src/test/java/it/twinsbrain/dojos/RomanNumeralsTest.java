@@ -68,4 +68,21 @@ public class RomanNumeralsTest {
     void fifty_is_L() {
         assertThat(romanOf(50), equalTo("L"));
     }
+
+    @Test
+    void forty_is_XL() {
+        assertThat(romanOf(40), equalTo("XL"));
+    }
+
+    @ParameterizedTest(name = "roman number for {0} is {1}")
+    @CsvSource({
+            "45, XLV",
+            "46, XLVI",
+            "47, XLVII",
+            "48, XLVIII",
+            "49, XLIX",
+    })
+    void from_45_to_49_works(int arabic, String roman) {
+        assertThat(romanOf(arabic), equalTo(roman));
+    }
 }
