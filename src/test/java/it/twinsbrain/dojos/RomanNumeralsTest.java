@@ -85,4 +85,14 @@ public class RomanNumeralsTest {
     void from_45_to_49_works(int arabic, String roman) {
         assertThat(romanOf(arabic), equalTo(roman));
     }
+
+    @Test
+    void one_hundred_is_C() {
+        assertThat(romanOf(100), equalTo("C"));
+    }
+
+    @Test
+    void ninety_is_XC() {
+        assertThat(romanOf(90), equalTo("XC"));
+    }
 }
